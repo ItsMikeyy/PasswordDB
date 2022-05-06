@@ -1,0 +1,144 @@
+body{
+    background-color: #F7E9D7;
+}
+a{
+    text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input{
+    margin: 30px;
+    padding: 11px;
+    width: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #fff6ea;
+    color: #000000;
+    text-align: center;
+    border: none;
+}
+
+button:hover{
+    background-color: #EBD8C3;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+#mainHeader{
+    background-color: #EBD8C3;
+}
+#headerTitle{
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+}
+
+
+#addAccountButton{
+    margin: 50px auto;
+    background-color: #EBD8C3;
+    width: 20%;
+    height: 10%;
+    padding: 3em;
+    text-align: center;
+    border: 2px solid #878787;
+    border-radius: 10px;
+    
+}
+
+#loginButtons{
+    margin: 2em auto;
+    background-color: #EBD8C3;
+    width: 40em;
+    height: 20em;
+    padding: 3em;
+    text-align: center;
+    border: 2px solid #878787;
+    border-radius: 10px;
+}
+.account{
+    margin: auto;
+    border: 3px solid #878787;
+    border-radius: 10px;
+    width: 30%;
+    padding: 10px;
+    margin: 50px auto;
+    inline-size: 30%; 
+    background-color: #EBD8C3
+
+}
+.accountName{
+    text-align: center;
+}
+.mainButton{
+    background-color: #FFF6EA;
+    border-color: #878787;
+    text-align: center;
+    width: 20em;
+    padding: 2em;
+    margin: 20px;
+}
+
+.optionContainer{
+    text-align: center;    
+}
+
+.option{
+    display: inline;
+    text-align: center;
+    margin: auto 20px;
+}
+
+.container{
+    background-color: #EBD8C3;
+    text-align: center;
+    margin: 100px auto;
+    width: 70%;
+    border: 2px solid #878787;
+    border-radius: 10px;
+}
+
+.optionButton{
+    background-color: #EBD8C3;
+    padding: 10px;
+    width: 25%;
+    height: 3%;
+    border: 2px solid #878787;
+    border-radius: 10px;
+    font-size: 100%;
+}
+.login{
+    text-align: center;
+    background-color: #EBD8C3;
+    padding: 7% 5%;
+    margin: 100px auto;
+}
+.login input {
+    margin: 30px;
+    padding: 22px;
+    width: 30%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #fff6ea;
+    color: #000000;
+    text-align: center;
+    border: none;
+}
+.login input:focus {
+    outline:none;
+}
+
+.passwordInput{
+    margin: 30px;
+    padding: 22px;
+    font-size: 20px;
+    width: 30%;
+}
