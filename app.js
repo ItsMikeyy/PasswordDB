@@ -231,6 +231,6 @@ app.post("/edit/update", (req,res) =>{
 
 // })
 
-app.listen(3000 || 80, () => {
+app.listen(process.env.PORT || 80, () => {
     console.log("Server started on port 3000!");
 });
