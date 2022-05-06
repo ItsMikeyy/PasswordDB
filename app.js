@@ -99,6 +99,7 @@ app.post("/signup",(req,res) => {
 
 
 app.get("/home", (req,res) => {
+    console.log(loginID)
     User.findById({_id: loginID}, function(err, foundUser){
         if(err){
             console.log(err);
@@ -109,6 +110,7 @@ app.get("/home", (req,res) => {
                 res.render("home", {
                     information: foundUser.accounts
                 });
+                console.log(foundUser)
             }
             else{
                 res.redirect("/login");
@@ -185,13 +187,21 @@ function generatePassword(length, symbols, numbers, lowercase, uppercase){
 // }
 
 app.post("/edit", (req,res) =>{
-    console.log(mongoose.Types.ObjectId(req.body.id))
+    console.log("LOGIN: " + loginID)
+    console.log("Loking for: " + mongoose.Types.ObjectId(req.body.id))
     // User.aggregate([{$unwind: "$accounts"}, {$match:{"accounts._id" : mongoose.Types.ObjectId(req.body.id)}}], function(err, user){
-    value = User.findOne({id: loginID})
-    value.select({ accounts: {$elemMatch: {_id: mongoose.Types.ObjectId(req.body.id)}}})
+    value = User.findById({_id: loginID})
+    
+    value.select({ accounts: {$elemMatch:{_id: mongoose.Types.ObjectId(req.body.id)}}})
     value.exec(function(err,user){
-        console.log(user)
-        res.render("edit", {account: user.accounts[0]});
+        if(err){
+            console.log(err)
+        } else {
+            console.log("found")
+            console.log(user)
+            res.render("edit", {account: user.accounts[0]});
+        }
+       
     })
 });
 
@@ -221,6 +231,6 @@ app.post("/edit/update", (req,res) =>{
 
 // })
 
-app.listen(process.env.PORT || 80, () => {
+app.listen(3000 || 80, () => {
     console.log("Server started on port 3000!");
 });
