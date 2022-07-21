@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
+  <%- include('partials/head.ejs') %>
   <body>
-    <header id="mainHeader">
-      <h1 id="headerTitle">Accounts</h1>
-    </header>
+    <div class="home-container">
+      <h1 class="header-title">Accounts</h1>
+      <div class="account-list">
         <% information.forEach(account => { %>
-          <div class="account">
+          <div class="accounts">
             <h2 class="accountName"><%=account.accountName%></h3>
             <p class="username">Username: <%=account.accountUsername%></p>
-            <label class="password">Password:</label>
-            <input class="passwordInput" value=<%=account.accountPassword%> readonly> 
+            <div class="password-container">
+              <label class="password">Password:</label>
+              <input class="passwordInput" value=<%=account.accountPassword%> readonly> 
+            </div>
             
             
-            <div class="optionContainer">
+            <div class="option-container">
               <form class="option" action="/edit" method="post">
                 <a href="/edit">
-                  <button class="editButton optionButton" name="id" value=<%=account._id%>>EDIT</button>
+                  <button class="option-button" name="id" value=<%=account._id%>>EDIT</button>
                 </a>
               </form>
 
               <form class="option" action="/delete" method="post">
-                <button class="deleteButton optionButton" name="id" value=<%=account._id%>>DELETE</button>
+                <button class="option-button" name="id" value=<%=account._id%>>DELETE</button>
               </form>  
             </div>
 
           </div>
       <% }); %>
+    </div>
 
-      <form class="container"action="/home" method="post">
-          <button id="addAccountButton">Add New Account!</button>
+      <form class="form-container"action="/home" method="post">
+          <button class="account-add-button">Add New Account!</button>
       </form>
+    </div>
+
 
     
        

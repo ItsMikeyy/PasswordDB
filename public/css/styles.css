@@ -1,144 +1,254 @@
-body{
-    background-color: #F7E9D7;
-}
-a{
-    text-decoration: none;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-input{
-    margin: 30px;
-    padding: 11px;
-    width: 10%;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #fff6ea;
-    color: #000000;
+body {
+    background-color: #1c1c1c;
+}
+
+.account-container {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.account-container > form {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-container input {
+    background-color: #1c1c1c;
+    border: solid 2px purple;
+    border-radius: 20px;
+    width: 50%;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    min-width: 300px;
+}
+
+.account-container input::placeholder {
+    color: white;
+}
+
+.header-title {
+    margin-bottom: 5rem;
+}
+
+.main-button {
+    margin-top: 2rem;
+    width: 30%;
+    padding: 1.5rem;
+    background-color: #1c1c1c;
+    border: solid 2px rgb(51, 149, 220);
+    border-radius: 30px;
+    transition: background-color 0.5s;
+    font-size: 2rem;
+    min-width: 300px
+}
+
+.main-button:hover {
+    background-color: rgb(51, 149, 220);
+}
+
+.main-button:active {
+    background-color: rgb(165, 207, 237);
+}
+
+.home-container {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 300px;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.accounts {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border: white 3px solid;
+    width: 100%;
+    padding: 2rem;
+}
+.account-list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+}
+.accounts > * {
+    margin: 0.5rem;
+}
+
+.form-container {
+    position: relative;
+    margin: 0 auto;
     text-align: center;
-    border: none;
+    width: 100%;
 }
 
-button:hover{
-    background-color: #EBD8C3;
-}
+.account-add-button:active {
+    background-color: rgb(157, 220, 160);
+ }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
-
-#mainHeader{
-    background-color: #EBD8C3;
-}
-#headerTitle{
-    margin: auto;
-    text-align: center;
-    padding: 1em;
-}
-
-
-#addAccountButton{
-    margin: 50px auto;
-    background-color: #EBD8C3;
+.account-add-button {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20px;
     width: 20%;
-    height: 10%;
-    padding: 3em;
-    text-align: center;
-    border: 2px solid #878787;
-    border-radius: 10px;
-    
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1c1c1c;
+    border: solid 2px rgb(77, 232, 84);
+    border-radius: 30px;
+    transition: background-color 0.5s;
+    font-size: 2rem;
+    min-width: 200px;
 }
 
-#loginButtons{
-    margin: 2em auto;
-    background-color: #EBD8C3;
-    width: 40em;
-    height: 20em;
-    padding: 3em;
-    text-align: center;
-    border: 2px solid #878787;
-    border-radius: 10px;
-}
-.account{
-    margin: auto;
-    border: 3px solid #878787;
-    border-radius: 10px;
-    width: 30%;
-    padding: 10px;
-    margin: 50px auto;
-    inline-size: 30%; 
-    background-color: #EBD8C3
-
-}
-.accountName{
-    text-align: center;
-}
-.mainButton{
-    background-color: #FFF6EA;
-    border-color: #878787;
-    text-align: center;
-    width: 20em;
-    padding: 2em;
-    margin: 20px;
+.account-add-button:hover {
+   background-color: rgb(77, 232, 84);
 }
 
-.optionContainer{
-    text-align: center;    
-}
-
-.option{
-    display: inline;
-    text-align: center;
-    margin: auto 20px;
-}
-
-.container{
-    background-color: #EBD8C3;
-    text-align: center;
-    margin: 100px auto;
-    width: 70%;
-    border: 2px solid #878787;
-    border-radius: 10px;
-}
-
-.optionButton{
-    background-color: #EBD8C3;
-    padding: 10px;
-    width: 25%;
-    height: 3%;
-    border: 2px solid #878787;
-    border-radius: 10px;
-    font-size: 100%;
-}
-.login{
-    text-align: center;
-    background-color: #EBD8C3;
-    padding: 7% 5%;
-    margin: 100px auto;
-}
-.login input {
-    margin: 30px;
-    padding: 22px;
-    width: 30%;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #fff6ea;
-    color: #000000;
-    text-align: center;
+.password-container > input{
     border: none;
-}
-.login input:focus {
-    outline:none;
+    border-bottom: purple solid 2px;
+    background-color: #1c1c1c;
+    width: 80%;
+    font-size: 1.5rem;
 }
 
-.passwordInput{
-    margin: 30px;
-    padding: 22px;
-    font-size: 20px;
-    width: 30%;
+.option-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.option-container > form {
+    width: 100%;
+    text-align: center;
+}
+
+.option-button {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1c1c1c;
+    border: solid 2px rgb(77, 232, 84);
+    border-radius: 30px;
+    transition: background-color 0.5s;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background-color 0.5s;
+}
+
+.option-button:hover {
+    background-color: rgb(77, 232, 84);
+}
+
+.create-container {
+    display: flex;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 300px;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.create-container > form {
+    width: 100%;
+  
+}
+
+.account-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-border-input {
+    width: 100%;
+    margin: 1rem 4rem; 
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: purple solid 2px;
+    background-color: #1c1c1c;
+    outline: none;
+}
+
+.password-options {
+    position: relative;
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+}
+.password-options > * {
+    margin: 1rem 0;
+}
+
+.center {
+    position: absolute;
+    bottom: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.edit-container {
+    text-align: center;
+    width: 80vw;
+    margin: 0 auto;
+    position: relative;
+}
+
+.edit-container > form  {
+    width: 100%;
+}
+
+.edit-container > form > * {
+    margin: 1rem 0;
+}
+ @media (max-width: 1622px) {
+    .option-container {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .option-button {
+        min-width: 100px;
+    }
+
+    .home-container {
+        width: 100vw;
+    }
+
+    .account-info {
+        flex-direction: column;
+    }
+ }

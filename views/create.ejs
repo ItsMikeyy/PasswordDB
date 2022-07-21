@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <%- include('partials/head.ejs') %>
 
-  </head>
   <body>
-    <header id="mainHeader">
-      <h1 id="headerTitle">Create New Account</h1>
-    </header>
-    <div class="container">
-        <form action="/create" method="post">
-          <div class="accountInfo">
-            <input name="accountName" placeholder="Account name" class="accountName">
-            <input name="username" placeholder="Username" class="username">
-            <input name="password" placeholder="Password" type="password" class="password">
-            <br>
-          
-            <h3>Or let us create a strong password for you!</h3>
-            <input name="length" placeholder="Password length" type="number" class="accountInfo">
+    <div class="create-container">
+      <h1 class="header-title">Create New Account</h1>
+      <form action="/create" method="post">
+        <h3>Account Info</h3>
+        <div class="account-info">
+          <input autocomplete="off" name="accountName" placeholder="Account name" class="bottom-border-input">
+          <input autocomplete="off" name="username" placeholder="Username" class="bottom-border-input">
+          <input autocomplete="off" name="password" placeholder="Custom password" type="password" class="bottom-border-input">
+          <br>
+        </div>
+
+        
+
+          <div class="password-options">
+            <h3>Dont want to make a custom password? Leave the custom password box blank and select your password options!</h3>
+            <input autocomplete="off" name="length" placeholder="Password length" type="number" class="bottom-border-input">
             <br>
             <label>Include symbols</label>
             <input type="checkbox" class="symbols" name="symbols" value="yes">
@@ -36,9 +33,9 @@
             <label>Include uppercase</label>
             <input type="checkbox" class="uppercase" name="uppercase" value="yes">
             <br>
-            <button class="mainButton" type="submit">Submit</button>
+            <button class="main-button center" type="submit">Submit</button>
           </div>
-        </form>
+      </form>
     </div>
 
     
